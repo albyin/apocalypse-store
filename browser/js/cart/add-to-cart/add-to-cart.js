@@ -9,6 +9,7 @@ app.directive('addToCart', function (CartFactory) {
             scope.addQuant = '';
             scope.addToCart = function() {
                 CartFactory.pushCartItem(scope.item, scope.addQuant);
+                scope.addQuant = ""; //reset addQuant dropdown selection to default
             };
         }
     };

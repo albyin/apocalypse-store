@@ -1,8 +1,46 @@
 <div ng-if="!paid">
-    Review :
+    <h1>Confirm Your Order</h1>
     <pre>
         {{ cart | json}}
     </pre>
+
+    <h2>Payment Info</h2>
+    <table>
+	    <tr> 
+		    <td height="22" align="right" valign="middle">Credit Card Number:</td>
+		    <td colspan="2" align="left"><input name="CCNo" type="text" value="" size="19" maxlength="40"></td>
+	  	</tr>
+	  	<tr> 
+		    <td height="22" align="right" valign="middle">Expiry Date:</td>
+		    <td colspan="2" align="left">
+		      <SELECT NAME="CCExpiresMonth" >
+		        <OPTION VALUE="" SELECTED>--Month--
+		        <OPTION VALUE="01">January (01)
+		        <OPTION VALUE="02">February (02)
+		        <OPTION VALUE="03">March (03)
+		        <OPTION VALUE="04">April (04)
+		        <OPTION VALUE="05">May (05)
+		        <OPTION VALUE="06">June (06)
+		        <OPTION VALUE="07">July (07)
+		        <OPTION VALUE="08">August (08)
+		        <OPTION VALUE="09">September (09)
+		        <OPTION VALUE="10">October (10)
+		        <OPTION VALUE="11">November (11)
+		        <OPTION VALUE="12">December (12)
+		      </SELECT> /
+		      <SELECT NAME="CCExpiresYear">
+		        <OPTION VALUE="" SELECTED>--Year--
+		        <OPTION VALUE="15">2015
+		        <OPTION VALUE="16">2016
+		        <OPTION VALUE="17">2017
+		        <OPTION VALUE="18">2018
+		        <OPTION VALUE="19">2019
+		        <OPTION VALUE="20">2020
+		      </SELECT>
+		    </td>
+	  	</tr>
+    </table>
+
     <button ng-click="processPayment()" class="btn btn-block btn-primary">
         Pay
     </button>

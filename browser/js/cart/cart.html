@@ -37,7 +37,11 @@
                            <!-- cart items -->
                            <tr ng-repeat="cartItem in cart.listitems">
                               <td class="ng-binding">{{cartItem.item.product.name}}</td>
-                              <td class="tdCenter">{{cartItem.quantity}}</td>
+                              <td class="tdCenter">
+                                 <select ng-model="cartItem.quantity" ng-change="updateQuant(cartItem.item._id, cartItem.quantity)">
+                                    <option ng-repeat="num in [].constructor(cartItem.item.quantity) track by $index" value="{{$index + 1}}" ng-selected="{{($index+1) === cartItem.quantity}}">{{$index + 1}}</option>
+                                 </select>
+                              </td>
                               <td class="pricePerItem">{{cartItem.item.price/100 | currency}}</td>
                               <td class="tdCenter">{{cartItem.item.price * cartItem.quantity/100 | currency}}</td>
                               <td class="tdCenter" title="remove from cart">
@@ -60,7 +64,7 @@
                   <!--        buttons -->
                   <div class="col-md-4">
                      <p class="text-info">
-                        <button class="btn btn-block">
+                        <button class="btn btn-block" ui-sref="home">
                         <i class="icon-chevron-left"></i> back to store
                         </button>
 
