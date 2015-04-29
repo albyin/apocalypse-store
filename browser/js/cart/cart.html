@@ -6,18 +6,21 @@
       <div class="span10 offset1">
          <h1>
             <a><img src="http://fc01.deviantart.net/fs71/i/2011/118/0/c/space_logo_by_avikdey-d3f2ihe.jpg" height="60" width="60" alt="logo"></a>
-            Space Store 
+            Shopping Cart
          </h1>
+         <br/>
+         <br/>
          <div id="content">
-            <p class="text-info">
-               Thanks for shopping at the Space Store.<br>
-               This is your shopping cart. Here you can edit the items, 
-               go back to the store, clear the cart, or check out.
-            </p>
             <div class="container-fluid">
                <div class="row">
                   <!-- left column -->
                   <div class="col-md-8">
+                     <p class="text-info">
+                        Thanks for shopping at Future Experience.<br>
+                        This is your shopping cart. Here you can edit the items, 
+                        go back to the store, clear the cart, or check out.
+                     </p>
+                     <br/>
                      <!-- items -->
                      <table class="table table-bordered">
                         <!-- header -->
@@ -56,19 +59,19 @@
                   </div> <!-- end left column -->
                   <!--   right column  -->
                   <div class="col-md-4">
-                     <table>
+                     <table class="table table-bordered">
                      <h3>Cart Totals</h4>
                      <tr>
                         <td>Cart Subtotal: </td>
-                        <td>{{cart.totalPrice/100 | currency}}</td>
+                        <td class="tdCenter">{{cart.totalPrice/100 | currency}}</td>
                      </tr>
                      <tr>
                         <td>Shipping: </td>
-                        <td>Free!</td>
+                        <td class="tdCenter">Free!</td>
                      </tr>
                      <tr>
-                        <td>Order Total: </td>
-                        <td>{{cart.totalPrice /100 | currency}}</td>
+                        <td><strong>Order Total: </strong></td>
+                        <td class="tdCenter"><strong>{{cart.totalPrice /100 | currency}}</strong></td>
                      </tr>
 
                      </table>
